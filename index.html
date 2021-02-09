@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="styleeeeee.css">
+</head>
+<nav id="navbar">
+  <header>Loops and Exceptions</header>
+  <ul>
+    <li><a class="nav-link" href="#What_are_Loops">What are Loops?</a></li>
+    <li>
+      <a class="nav-link" href="#Foor_Loop"
+        >For Looop</a
+      >
+    </li>
+    <li>
+      <a class="nav-link" href="#While_Loop">While Loop</a>
+    </li>
+    <li><a class="nav-link" href="#Do_While_Loop">Do-While Loop</a></li>
+    <li><a class="nav-link" href="#Nested_Loop">Nested Loops</a></li>
+    <li>
+      <a class="nav-link" href="#What_are_exceptions">What are exceptions?</a>
+    </li>
+    <li><a class="nav-link" href="#Error_Handling">Error Handling</a></li>
+    <li><a class="nav-link" href="#Try_and_Catch_Statements">Try and Catch Statements</a></li>
+    <li>
+      <a class="nav-link" href="#Summary"
+        >Summary</a
+      >
+    </li>
+    <li><a class="nav-link" href="#Reference">Reference</a></li>
+  </ul>
+</nav>
+<main id="main-doc">
+  <section class="main-section" id="What_are_Loops">
+    <header>What are Loops?</header>
+    <article>
+      <p>
+        Each day, we wake up in the morning, take a bath, brush our teeth, eat breakfast, travel to the office or school, do our office work or attend classes, go home, eat lunch and dinner, and sleep. Everyday, we do the same things over and over again. A lot of things occur in cycles, and one of them is our daily habits. In programming, we call these loops. <b>Loops</b> permit a set of instructions to be repeated untila condition is reached. In Java, there are three loop structures.
+      </p>
+    </article>
+  </section>
+  <section class="main-section" id="Foor_Loop">
+    <header>Foor Loop</header>
+    <article>
+      <code>for (initialization; test condition; increment/operation)
+      {
+                  statement/s
+      }
+      </code>
+
+      <p>The <i>for loop</i> has three main parts separated by three semicolons:</p>
+    </article>
+    <ul>
+    <li>
+    <b>initialization</b> - initial values of variables that will be used in the loop.
+    </li>
+    <li>
+    <b>test condition</b> - a boolean expression that should be satisfied for the loop to continue executing the statements within the loop's scope.
+    </li>
+    <li>
+    <b>increment/operation</b> - dictates the change in value of the loop control variable every time the loop is repeated
+    </li>
+    </ul>
+    <p><b>for loops</b> are commonly used when the number of iterations needed is already known.</p>
+    Example:
+    <code>
+    public class For_Loop
+    {
+      public static void main(String[] args)
+      {
+        for(int Ctr=1;Ctr<=5;Ctr++){
+          System.out.println(Ctr);
+        }
+      }
+    }
+    
+    </code>
+  </section>
+  <section class="main-section" id="While_Loop">
+    <header>While Loop</header>
+    <article>
+
+      <p>
+        The while loop is another interesting loop structure in java. Here the condition is at the beginning and the set of instructions inside the loop will be repeated until this condition becomes false. Unlike a for loop, the condition does not necessarily involve a loop control variable
+      </p>
+      <code>
+      public class While_Loop
+      {
+        public static void main(String[] args)
+        {
+          int Ctr=1;
+          while(Ctr<=5)
+          {
+            System.out.println(Ctr);
+            Ctr++;
+          }
+        }
+      }
+      </code>
+      <p>
+        The output of While_Loop class is the same as the For_Loop class. This shows that there is an alternative way to produce the same output with another loop structure. Unlike the for loop structure, the variable Ctr was declared and initialized outide of the while loop.
+      </p>
+      <p>
+      The variable Ctr was incremented on line 9. If it was not incremented, its value will remain 1, causing the program to run endlessly. This is called <b>infinite loop</b>.
+      </p>
+      <code>
+      while(int Ctr<=5)
+      {
+        System.out.println(Ctr);
+        Ctr++
+      }
+      </code>
+      <p> You cannot declare and/or initialize Ctr within the parentheses of the beginning of a while loop because the syntax of a while loop only allows conditional statenments to beincluded within it.
+      </p>
+      <code>
+      while (Ctr<=5)
+      {
+        int Ctr;
+        System.out.println(Ctr);
+        Ctr++;
+      }
+      </code>
+    </article>
+  </section>
+  <section class="main-section" id="Do_While_Loop">
+    <header>Do-While Loop</header>
+    <article>
+
+      <p>
+      The do-while loop is the only loop which executes at least once. This is due to the fact that the conditon for the loop is located at the last part.
+      </p>
+
+      <code>
+      do
+      {
+        --statement/s--
+      } while (boolean condition);
+      </code>
+      <code>
+      public class Do_While
+      {
+        public static void main(String[] args)
+        {
+          int Ctr=1;
+          do
+          {
+            System.out.println(Ctr);
+            Ctr++;
+          }whie (Ctr<=5);
+        }
+      }
+      </code>
+      <p>
+      The output of the Do_While class is the same as the two previous programs. As previously noted in the While_Loop class, the declaration and initialization parts are outside the loop to avoid errors.
+      </p>
+    </article>
+  </section>
+  <section class="main-section" id="Nested_Loop">
+    <header>Nested Loops</header>
+    <code>
+    public class Nested_For
+    {
+      public static void main(String[] args)
+      {
+        for(int Row=1;Row<=10;Row++)
+        {
+          for(int Column=1;Column<=10;Column++)
+          {
+            System.out.print(Row*Column+"\t");
+          }
+          System.out.println();
+        }
+      }
+    }
+    </code>
+    <p>The Nested_For class prints the multiplication table. To do this, it needs two loops, where one loop is inside the other. This way it is called a <b>nested loop</b>
+    </p>
+  </section>
+  <section class="main-section" id="What_are_exceptions">
+    <header>What are Exceptions?</header>
+    <article>
+      <p>
+        If you look up the definition of the word "exception" in the dictionary, you will find out that it means something beyond established rules or regulations. In java, there are also exceptions: scenarios or events that might cause your program to produce errors(i.e., when something happens that you didn't expect).
+      </p>
+    </article>
+  </section>
+  <section class="main-section" id="Error_Handling">
+    <header>Error Handling</header>
+    <article>
+      <p>
+      "Java is dynamic. Java makes it possible to reuse previously written programs to lessen the workload of a programmer."
+      </p>
+
+      <p>
+        Classes that help handle errors are included with the standard classes that come with the installation of Java. These are called <b>exception classes</b>.
+      </p>
+    </article>
+  </section>
+  <section class="main-section" id="Try_and_Catch_Statements">
+    <header>Try and Cath Statements</header>
+    <article>
+      <p>
+        When using the try and catch statements, it should be remembered that:
+      </p>
+      <ul>
+      <li>
+      a try statement should be paired with at least one catch statement.
+      </li>
+      <li>
+      a try statement can have several catch statements after it but the catch statements should have different exceptions to "catch," anticipate, or handle.
+      </li>
+      <li>
+      a catch statement should not be declared without a corresponding try statement.
+      </li>
+      <li>
+      a try statement should be declared before declaring a catch statement.
+      </li>
+      <li>
+      a catch statement should immediately follow a try statement block.
+      </li>
+      </ul>
+    </article>
+  </section>
+  <section class="main-section" id="Summary">
+    <header>Summary</header>
+    <article>
+      <p>
+     Loops permit a set of instructions to be repeated until a condition is reached. In Java, there are three loop structures: the for loop, while loop, and do-while loop. The for loop is commonly used when the number of iterations is already known. The while loop is a loop that checks the condition supplied by the user before entering the loop. The do-while loop does the instructions within the loop before checking if the condition supplied by the user is satisfied. Loops within loops are called nested loops.
+      </p>
+
+      <p>
+      Exceptions in Java are scenarios or events that might cause your program to produce errors. To inform Java that there is a possibility to encounter errors within a block, the code block is placed within the try statement. If an exception is encountered within the scope of the try statement, Java will execute the code within the appropriate catch statement thatis assigned to handle the particular exception. A single try statement can have several catch statements paired with it. A try or catch statement can be optionally followed by a finally statement. The code within the finally statement is executed after atry or catch statement regardless of whether Java encountered an exception or not.
+      </p>
+    </article>
+  </section>
+ 
+  <section class="main-section" id="Reference">
+    <header>Reference</header>
+    <article>
+    	All the documentation in this page is taken from <b>Programming and Databases Second Edition, 2012</b>
+
+    </article>
+  </section>
+</main>
